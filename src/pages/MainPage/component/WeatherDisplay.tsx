@@ -27,11 +27,6 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData }) => {
     return days[date.getDay()];
   };
 
-  console.log(weatherData);
-  console.log(weatherData.current);
-  console.log(weatherData.current.surface_pressure);
-  console.log(weatherData.current_units.surface_pressure);
-
   return (
     <Card className="mt-4 shadow weather-card">
       <Card.Body className="p-4">
