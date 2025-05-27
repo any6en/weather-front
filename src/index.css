@@ -1,13 +1,121 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.weather-card {
+  border-radius: 16px;
+  border: none;
+}
+
+.weather-param {
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.weather-param:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Контейнер для горизонтального скролла с отступом снизу */
+.hourly-scroll-container {
+  overflow-x: auto; /* Горизонтальный скролл включен */
+  padding-bottom: 10px; /* Отступ снизу для скролла */
+  -webkit-overflow-scrolling: touch; /* Плавный скролл на мобильных устройствах iOS */
+  scrollbar-width: thin; /* Тонкая полоса прокрутки для Firefox */
+  scrollbar-color: rgba(255, 255, 255, 0.5) transparent; /* Цвет ползунка и трека скролла */
+}
+
+/* Настройка высоты полосы прокрутки для браузеров WebKit */
+.hourly-scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+/* Стиль "ползунка" в скролле для WebKit */
+.hourly-scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+}
+
+/* Контейнер с элементами, расположенными в один ряд (inline-flex) с отступами между ними */
+.hourly-scroll-content {
+  display: inline-flex; /* Горизонтальное расположение элементов с сохранением inline поведения */
+  gap: 12px; /* Расстояние 12px между элементами */
+  padding: 4px 2px; /* Внутренние отступы сверху, снизу, слева и справа */
+}
+
+/* Отдельный элемент в горизонтальном скролле */
+.hourly-item {
+  min-width: 60px; /* Минимальная ширина элемента */
+  background-color: rgba(255, 255, 255, 0.1); /* Фон с легкой прозрачностью */
+  transition: all 0.2s ease; /* Плавное изменение */
+  flex-shrink: 0; /* Элемент не сжимается */
+}
+
+/* При наведении элемент чуть светлеет и увеличивается */
+.hourly-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Элемент ежедневного прогноза с фоном и плавным переходом */
+.daily-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* При наведении элемент светлеет и поднимается вверх */
+.daily-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Стили для кнопок прокрутки */
+.hourly-scroll-container {
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+.btn-scroll {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.btn-scroll:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-scroll-left {
+  left: -16px;
+}
+
+.btn-scroll-right {
+  right: -16px;
+}
+
+/* Скрываем кнопки на очень маленьких экранах */
+@media (max-width: 400px) {
+  .btn-scroll {
+    display: none;
+  }
 }
