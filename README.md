@@ -1,46 +1,34 @@
-# Getting Started with Create React App
+# Веб-приложение прогноза погоды
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Данное приложение было разработано в рамках тестового задания для компании o-complex.
 
-## Available Scripts
+### Введение
+Данное приложение визуализирует такие данные, как:
+- Погода на данный час
+- Почасовая погода в течение дня
 
-In the project directory, you can run:
+Было сделано:
+- Отправки запросов к стороннему API (погоды)
+- Визуализирование полученных данных
+- Спроектирован интерфейс
+- Добавлена адаптивность
+- Добавлено запоминание последнего города (в locatStorage) для воспроизведения при первом рендере после
 
-### `npm start`
+### Преимущества:
+- Адаптация под мобильные устройства, планшеты, ноутбуки и ПК
+- Удобный скрол почасовой погоды
+- Помнит последний запроса погоды и отображает при первом рендере
+- Достаточно лаконичный дизайн
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Технологии:
+- NPM (Node Packet Manager) -- менеджер пакетов, входящий в состав Node.js. Позвляет инсталлировать нужные пакеты и т. д.
+- TypeScript -- язык программирования, производное от JavaScript, разработанный Microsoft. Поддержка статической типизации дает большой старт, в связи с этим, такие приложения считаются наиболее надежными
+- React -- библиотека, использующаяся для построения UI. Главная идея -- компонентно-ориентированный стиль -- создание независимых компонентов, переиспользуемых компонентов. Очень удобно для построения сложных интерфейсов.
+- MUI (Material UI) -- UI библиотека, имеющая достаточно большое разнообразие компонентов для работы: поля, формы, таблицы, слайдеры, кнопки и т. д.
+- Boostrap 5 -- UI библиотека, имеющая достаточно большое разнообразие компонентов для работы: поля, формы, таблицы, слайдеры, кнопки и т. д.
+- Axios -- библиотека, позволяющая отправлять HTTP(-S) запросы всех типов. Это API для конструирования запроса к серверу
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Запуск
+- Установите зависимости: `npm install` или `npm i`
+- Запустите приложение: `npm run start`
+- Откройте http://localhost:3000 (м. б. др. порт, в зависимости от занятости) в браузере (либо сам откроет)
